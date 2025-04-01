@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Header/Footer Offset Fix</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: green;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 25px;
+      right: 25px;
+      height: 90px;
+      background-color: red;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 9999;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 25px;
+      right: 25px;
+      height: 90px;
+      background-color: blue;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 9999;
+    }
+
+    main {
+      padding: 0;
+    }
+
+    p {
+      margin: 20px;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    @media print {
+      @page {
+        margin: 100px 0; /* top and bottom margins only */
+      }
+
+      header, footer {
+        position: fixed;
+      }
+
+      header {
+        top: 0;
+        margin-top: -100px;
+      }
+
+      footer {
+        bottom: 0;
+        margin-bottom: -100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🔴 This is the RED header (90px tall with 25px side margins)
+  </header>
+
+  <footer>
+    🔵 This is the BLUE footer (90px tall with 25px side margins)
+  </footer>
+
+  <main>
+    <!-- Lots of paragraphs to force multi-page print -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus.</p>
+    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil.</p>
+    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
+    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit.</p>
+    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+    <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+    <p>Et harum quidem rerum facilis est et expedita distinctio.</p>
+    <p>On the other hand, we denounce with righteous indignation.</p>
+    <p>These cases are perfectly simple and easy to distinguish.</p>
+    <p>In a free hour, when our power of choice is untrammelled.</p>
+    <p>But in certain circumstances and owing to the claims of duty.</p>
+    <p>He repudiated pleasure to secure other greater pleasures.</p>
+    <p>Excepteur sint occaecat cupidatat non proident.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.</p>
+    <p>Nullam varius, turpis et commodo pharetra.</p>
+    <p>Etiam sit amet orci eget eros faucibus tincidunt.</p>
+    <p>Duis leo. Sed fringilla mauris sit amet nibh.</p>
+    <p>Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales.</p>
+    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+    <p>Mauris sollicitudin fermentum libero. Praesent nonummy mi in odio.</p>
+    <p>Fusce ac felis sit amet ligula pharetra condimentum.</p>
+    <p>Aliquam lobortis. Maecenas vestibulum mollis diam.</p>
+    <p>Praesent egestas tristique nibh. Sed a libero.</p>
+    <p>Vestibulum eu odio. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede.</p>
+  </main>
+
+</body>
+</html>

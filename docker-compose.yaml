@@ -1,0 +1,6 @@
+services:
+  pdf_app_1:
+    build: .
+    container_name: pdf_app_1
+    ports:
+      - 8000:8000
